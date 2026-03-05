@@ -1,0 +1,16 @@
+:root {
+  height: 100%;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0 auto  ;
+  /* display: flex; */
+  height: 100vh;
+}
+
+
+
