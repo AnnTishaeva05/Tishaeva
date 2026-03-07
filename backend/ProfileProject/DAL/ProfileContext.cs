@@ -8,7 +8,7 @@ namespace ProfileProject.DAL
         public DbSet<ProfileItem> Profiles { get; set; }
         public ProfileContext(DbContextOptions<ProfileContext> options) : base(options)
         {
-            Database.EnsureCreated();
+            Database.Migrate();
         }
     }
 }

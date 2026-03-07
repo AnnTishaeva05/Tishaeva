@@ -1,20 +1,18 @@
-import { Children, Component } from 'react';
-import './App.css';
-import Navigation from './components/Navigation';
-import { Box, Button, Container } from '@mui/material';
-
-const styleButton = {backgroundColor: 'DeepPink', margin:"0 12px"}
+import "./App.css";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <>
-      <Navigation>
-      </Navigation>
-      <Container style={{width: '100%', display: "flex", justifyContent: "center"}}>
-        <Button variant='contained' size="large" sx={styleButton}> Button1</Button>
-        <Button variant='contained' size="large" sx={styleButton}>Button2</Button>
-      </Container>
-    </>
+    <div>
+      <Navigation></Navigation>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
   );
 }
 

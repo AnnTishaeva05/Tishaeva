@@ -1,16 +1,25 @@
-import React, {Component} from 'react'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import MenuIcon from '@mui/icons-material/Menu';
-import { Container, IconButton } from '@mui/material'
+import { Button, Container, IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
-export default function Navigation () {
-    return (
-            <Container maxWidth = "xl">
-                <Toolbar >
-                    
-                </Toolbar>
-            </Container>
-    )
+const styleButton = { backgroundColor: "DeepPink", margin: "0 12px" };
+
+export default function Navigation() {
+  return (
+    <Container
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        height: "200%",
+        paddingTop: 25,
+      }}
+    >
+      <Button LinkComponent = {Link} to="/" variant="contained" size="large" sx={styleButton}>
+        Первая страница
+      </Button>
+      <Button LinkComponent = {Link} to="/about" variant="contained" size="large" sx={styleButton}>
+        Вторая страница
+      </Button>
+    </Container>
+  );
 }
