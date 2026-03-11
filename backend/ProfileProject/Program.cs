@@ -9,7 +9,7 @@ builder.Services.AddDbContext<ProfileContext>(x  => x.UseSqlite(connection));
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen();  
 
 var app = builder.Build();
 
