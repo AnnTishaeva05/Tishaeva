@@ -1,6 +1,8 @@
-import { Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { Edit } from "@mui/icons-material";
 
-export default function UserCard({ name, surname, company, onEdit, onDelete }) {
+export default function UserCard({ id, name, surname, company, onEdit, onDelete }) {
   return (
     <Container
       disableGutters
@@ -10,21 +12,23 @@ export default function UserCard({ name, surname, company, onEdit, onDelete }) {
         justifyContent: "space-between",
         alignItems: "center",
         py: 1,
-        px: 2,
+        mt: 2,
         borderRadius: 1,
         border: 3,
         borderColor: "#F06292",
-        "&:hover": {
-          backgroundColor: "action.hover",
-          "& .actions": {
-            opacity: 1,
-          },
-        },
       }}
     >
-      <Typography variant="body1">
+      <Typography variant="body1" sx={{ pl: 2 }}>
         {name} {surname}, {company}
       </Typography>
+      <Box className="actions" sx={{ display: "flex", gap: 1 }}>
+        <IconButton color="default" onClick={() => onEdit(id)} aria-label="редактировать">
+          <Edit />
+        </IconButton>
+        <IconButton onClick={() => onDelete(id)} color="error" aria-label="удалить">
+          <DeleteIcon />
+        </IconButton>
+      </Box>
     </Container>
   );
 }

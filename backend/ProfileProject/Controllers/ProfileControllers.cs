@@ -23,7 +23,7 @@ namespace ProfileProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult<int> CreateProfile(ProfileItem profile)
+        public ActionResult<int> CreateProfile([FromBody]ProfileItem profile)
         {
             _context.Profiles.Add(profile);
             _context.SaveChanges();
@@ -40,6 +40,7 @@ namespace ProfileProject.Controllers
                 return NotFound();
             }
             oldProfile.Name = profile.Name;
+            oldProfile.Surname = profile.Surname;
             oldProfile.Company = profile.Company;
             
             _context.SaveChanges();
